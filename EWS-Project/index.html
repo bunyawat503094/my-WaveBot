@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Warning System (EWS)</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Leaflet.js (Map) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Chart.js (Wave Level Graph) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Leaflet Routing Machine -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Emergency Warning System (EWS)</h1>
+        </header>
+
+        <!-- Display Map -->
+        <div id="map"></div>
+
+        <!-- Wave Level Information -->
+        <div id="wave-info">
+            <h2>Wave Level: <span id="wave-height">0</span> meters</h2>
+            <p id="status" class="safe">Status: Safe</p>
+        </div>
+
+        <!-- Weather Information -->
+        <div id="weather-info">
+            <h2>Weather</h2>
+            <p><strong>Temperature:</strong> <span id="temp">-</span>°C</p>
+            <p><strong>Weather:</strong> <span id="weather">-</span></p>
+            <p><strong>Wind Speed:</strong> <span id="wind-speed">-</span> km/h</p>
+            <p><strong>Wind Direction:</strong> <span id="wind-dir">-</span></p>
+        </div>
+
+        <!-- Data Source -->
+        <div id="data-source">
+            <h2>Data Source</h2>
+            <p><strong>Wave Data:</strong> <span id="wave-source">-</span></p>
+            <p><strong>Weather Data:</strong> <span id="weather-source">-</span></p>
+        </div>
+
+        <!-- Time to Impact -->
+        <div id="time-to-impact">
+            <h2>Time to Impact: <span id="impact-time">-</span> minutes</h2>
+        </div>
+
+        <!-- View History Button -->
+        <button id="viewHistory"><i class="fas fa-history"></i> View History</button>
+
+        <!-- Display Wave Level Chart -->
+        <canvas id="waveChart"></canvas>
+
+        <!-- Wave History -->
+        <div id="history">
+            <h2>Wave History</h2>
+            <table id="history-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Wave Height (m)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ข้อมูลจะถูกเพิ่มโดย JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Siren Audio -->
+        <audio id="siren" src="siren.mp3"></audio>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
